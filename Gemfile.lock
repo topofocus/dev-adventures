@@ -1,0 +1,67 @@
+PATH
+  remote: ../arcadedb
+  specs:
+    arcadedb (0.4.1)
+      dry-configurable
+      dry-core
+      dry-schema
+      dry-struct
+      httpx
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.2.2)
+    dry-configurable (1.1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-core (1.0.1)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-initializer (3.1.1)
+    dry-logic (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-schema (1.13.3)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 1.0, >= 1.0.1)
+      dry-core (~> 1.0, < 2)
+      dry-initializer (~> 3.0)
+      dry-logic (>= 1.4, < 2)
+      dry-types (>= 1.7, < 2)
+      zeitwerk (~> 2.6)
+    dry-struct (1.6.0)
+      dry-core (~> 1.0, < 2)
+      dry-types (>= 1.7, < 2)
+      ice_nine (~> 0.11)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
+    http-2-next (1.0.1)
+    httpx (1.1.5)
+      http-2-next (>= 1.0.1)
+    ice_nine (0.11.2)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    terminal-table (3.0.2)
+      unicode-display_width (>= 1.1.1, < 3)
+    tty-color (0.6.0)
+    unicode-display_width (2.5.0)
+    zeitwerk (2.6.12)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  arcadedb (~> 0.4)!
+  pastel (~> 0.8.0)
+  terminal-table (~> 3.0)
+
+BUNDLED WITH
+   2.4.6

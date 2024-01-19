@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem "arcadedb", "~> 0.4", git: "https://github.com/topofocus/arcadedb"
+gem "arcadedb", "~> 0.4", path: '~/arcadedb'
 
 gem "pastel", "~> 0.8.0"
 

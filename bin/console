@@ -8,7 +8,7 @@
 ##	       test (t)
 require 'bundler/setup'
 require 'pathname'
-ProjectRoot =  Pathname.new( `pwd` ).parent
+ProjectRoot =  Pathname.new( Dir.pwd ).parent
 require 'terminal-table'
 require 'zeitwerk'
 require 'pastel'
@@ -20,11 +20,11 @@ require 'arcade'
 def browse  db: Arcade::Api.databases.first , extended: false
 
   headings = -> do
-       ar= ["","Name" , "Parents", "Type","Properties", 'Unique', 'Automatic'] 
+       ar= ["","Name" , "Parents", "Type","Properties", 'Unique', 'Automatic']
        extended ?  ar : ar - ['Properties']
   end
   rows = ->(r) do
-         ar=["Type", r[:name],r[:parent_types],r[:type]," " ,  " "] 
+         ar=["Type", r[:name],r[:parent_types],r[:type]," " ,  " "]
          !extended ? ar : ar + [""]
   end
   indizes = ->(i) do
@@ -35,17 +35,17 @@ def browse  db: Arcade::Api.databases.first , extended: false
     end
   end
 
-   list=  Arcade::Api.query db, "select from schema:types" 
+   list=  Arcade::Api.query db, "select from schema:types"
    if list.is_a? Array
      Terminal::Table.new do |t|
-       add_additional_separator =false 
+       add_additional_separator =false
        t.title = "Database: #{db}"
        t.headings =  headings.call
 #       t.style = { :border => :markdown }
        t.style = { border: :unicode_thick_edge }
        list.each.with_index do |row,j|
          t.add_separator if (add_additional_separator || !row[:indexes].empty? || !row[:properties].empty?) && j >0
-         add_additional_separator =false 
+         add_additional_separator =false
          t.add_row  rows[row]
          if  !row[:indexes].empty?
            add_additional_separator = true
@@ -56,7 +56,7 @@ def browse  db: Arcade::Api.databases.first , extended: false
          if  !row[:properties].empty?
            add_additional_separator = true
            row[:properties].each do |p|
-             ar= ["Property",p[:name],"",p[:type]," "," "] 
+             ar= ["Property",p[:name],"",p[:type]," "," "]
              t.add_row !extended ? ar : ar + [""]
            end
          end

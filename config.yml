@@ -3,20 +3,20 @@
   :test:
     dbname: adventure-test
     user:  root
-    pass:  ***
+    pass:  topo1focus
   :development:
     dbname: adventures
     user: root
-    pass:  ***
+    pass:  topo1focus
   :production:
     dbname: adventure-production
     user: root
-    pass: ***
+    pass: topo1focus
 :admin:
   :host: 10.247.8.109   #  localhost or ip
   :port: 2480
   :user: root
-  :pass: ***
+  :pass: topo1focus
 :logger: stdout           # 'file' or 'stdout'
 :namespace: Arcade        # Default Namespace
 :autoload: true           # load model if a link is detected in a record
